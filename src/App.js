@@ -3,7 +3,7 @@ import './App.css'
 
 import Footer from './components/Footer'
 import Form from './components/Form'
-import FontControlBox from './components/FormControlBox'
+import FontControlBox from './components/FontControlBox'
 import Modal from './components/Modal'
 
 function App() {
@@ -17,14 +17,14 @@ function App() {
 
     return (
         <>
-            <div className="form-wrapper">
+            <section className="form-wrapper">
                 <Form
                     formState={formState}
                     setFormState={setFormState}
                     modalRef={modalRef}
                 />
                 <Footer />
-            </div>
+            </section>
             <FontControlBox />
             <Modal formState={formState} ref={modalRef} />
         </>

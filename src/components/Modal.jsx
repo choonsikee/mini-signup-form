@@ -2,7 +2,7 @@ import { forwardRef } from 'react'
 
 const Modal = forwardRef(({ formState }, ref) => {
     return (
-        <dialog id="modal" className="rounded-lg shadow-xl text-left" ref={ref}>
+        <dialog className="rounded-lg shadow-xl text-left" ref={ref}>
             <div className="w-full rounded-lg">
                 <div className="p-6 mt-3">
                     <h3 className="text-lg leading-6 font-medium text-gray-900">
