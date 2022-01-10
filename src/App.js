@@ -1,39 +1,32 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import './App.css'
 
 import Footer from './components/Footer'
 import Form from './components/Form'
 import FontControlBox from './components/FormControlBox'
 import Modal from './components/Modal'
-import ModalBackdrop from './components/ModalBackdrop'
 
 function App() {
-    const [isValidForm, setIsValidForm] = useState(false)
     const [formState, setFormState] = useState({
         id: '',
         pw: '',
         confirmPw: '',
     })
+    // Ref: html dialog 태그의 native method를 사용하기 위한 방법
+    const modalRef = useRef(null)
+
     return (
         <>
-            <div className="wrapper">
+            <div className="form-wrapper">
                 <Form
-                    setIsValidForm={setIsValidForm}
                     formState={formState}
                     setFormState={setFormState}
+                    modalRef={modalRef}
                 />
                 <Footer />
             </div>
             <FontControlBox />
-            {isValidForm && (
-                <>
-                    <Modal
-                        setIsValidForm={setIsValidForm}
-                        formState={formState}
-                    />
-                    <ModalBackdrop />
-                </>
-            )}
+            <Modal formState={formState} ref={modalRef} />
         </>
     )
 }

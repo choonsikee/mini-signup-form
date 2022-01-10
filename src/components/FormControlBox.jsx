@@ -25,7 +25,6 @@ const FontControlBox = () => {
 
     useEffect(() => {
         $html.style.fontSize = fontSize + 'px'
-        console.log(fontSize)
     }, [fontSize])
 
     return (

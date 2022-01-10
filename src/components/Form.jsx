@@ -4,7 +4,7 @@ import FormInput from './FormInput'
 const ERROR_MESSAGE = {
     invalidID:
         '5~20자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능합니다.',
-    invalidPW: '8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.',
+    invalidPW: '8~16자 영문 대 소문자, 숫자만 사용 가능합니다.',
     invalidConfirm: '비밀번호가 일치하지 않습니다.',
     required: '필수 정보입니다.',
 }
@@ -12,7 +12,7 @@ const ERROR_MESSAGE = {
 const ID_REGEX = new RegExp('^[a-z0-9_-]{5,20}$')
 const PW_REGEX = new RegExp('^[a-zA-Z0-9W]{8,16}$')
 
-const Form = ({ setIsValidForm, formState, setFormState }) => {
+const Form = ({ formState, setFormState, modalRef }) => {
     const [errorState, setErrorState] = useState({
         id: '',
         pw: '',
@@ -48,8 +48,9 @@ const Form = ({ setIsValidForm, formState, setFormState }) => {
         const isValid = Object.values(errorState).every(
             (value) => value === undefined
         )
-
-        setIsValidForm(isValid)
+        if (isValid) {
+            modalRef.current.showModal()
+        }
     }
 
     const handleOnBlur = (e) => {
