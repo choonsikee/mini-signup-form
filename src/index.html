@@ -40,6 +40,7 @@
                     >
                     <input
                         id="pw"
+                        type="password"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-2 leading-tight"
                         placeholder="비밀번호를 입력해주세요"
                         autocomplete="off"
@@ -58,7 +59,7 @@
                     <input
                         id="pw-check"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight"
-                        type="text"
+                        type="password"
                         placeholder="비밀번호 확인을 입력해주세요."
                         autocomplete="off"
                     />
@@ -81,7 +82,7 @@
             </footer>
         </section>
         <aside id="font-control-box" class="flex fixed bottom-0 right-0">
-            <!-- TIP: button 비활성화는 HTML button 태그의 disable 속성을 활용해주세요. -->
+            <!-- TIP: button 비활성화는 HTML button 태그의 disabled 속성을 활용해주세요. -->
             <button
                 id="increase-font-btn"
                 class="bg-white text-gray-500 border border-gray-300 hover:bg-red-50 focus:outline-none focus:shadow-outline disabled:bg-gray-500 disabled:text-white rounded-full"
@@ -95,7 +96,7 @@
                 -
             </button>
         </aside>
-        <!-- TIP: Dialog(Modal)의 가시성은 HTML modal 태그의 native 속성과 메소드로 제어해주세요. -->
+        <!-- TIP: Dialog(Modal)의 가시성은 HTML dialog 태그의 속성과 메소드로 제어해주세요. -->
         <dialog id="modal" class="rounded-lg shadow-xl text-left">
             <div class="w-full rounded-lg">
                 <div class="p-6 mt-3">
@@ -142,3 +143,10 @@
         <script type="text/javascript" src="index.js"></script>
     </body>
 </html>
+
+<!-- 
+    html = 10px
+    body = 2em // 20px (10*2)
+    section = 2em // 40px (20*2)
+    form = 2rem // 20px (10*2)
+ -->
